@@ -68,7 +68,7 @@ const userSchema = new mongoose.Schema(
     // giong nhau het.
     advisorCommissionRate: {
       type: Number,
-      default: 0.3,
+      default: 0.5,
       min: 0,
       max: 1,
     },
