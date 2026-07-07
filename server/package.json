@@ -1,0 +1,42 @@
+{
+  "name": "khanghuynh-shop-server",
+  "version": "1.0.0",
+  "description": "Backend API cho Khanghuynh.shop - Cua hang ban file game FF",
+  "main": "src/server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "seed:admin": "node src/utils/seedAdmin.js",
+    "seed:products": "node src/utils/seedProducts.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "mongoose": "^8.5.0",
+    "bcryptjs": "^2.4.3",
+    "jsonwebtoken": "^9.0.2",
+    "dotenv": "^16.4.5",
+    "cors": "^2.8.5",
+    "helmet": "^7.1.0",
+    "express-rate-limit": "^7.3.1",
+    "express-validator": "^7.1.0",
+    "nodemailer": "^6.9.14",
+    "morgan": "^1.10.0",
+    "qrcode": "^1.5.4",
+    "axios": "^1.7.2",
+    "crypto-js": "^4.2.0",
+    "multer": "^1.4.5-lts.1",
+    "cloudinary": "^1.41.3",
+    "multer-storage-cloudinary": "^4.0.0",
+    "cookie-parser": "^1.4.6",
+    "compression": "^1.7.4",
+    "node-cron": "^3.0.3",
+    "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
