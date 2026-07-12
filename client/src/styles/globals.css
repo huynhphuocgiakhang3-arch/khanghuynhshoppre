@@ -1,0 +1,129 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-display: 'Sora', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+/* ===== Theme TOI (mac dinh) - "Inferno Gaming": nen than-tro toi, accent lua cam-do ===== */
+html.dark {
+  --color-ink-950: #0a0a0f;
+  --color-ink-900: #0f0f17;
+  --color-ink-800: #161620;
+  --color-ink-700: #1f1f2e;
+  --color-ink-600: #2a2a3d;
+  --color-mist-100: #f4f3f7;
+  --color-mist-300: #c8c6d4;
+  --color-mist-400: #9c99ad;
+  --color-mist-500: #71708a;
+  --glass-bg: rgba(22, 22, 32, 0.55);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-input-bg: rgba(10, 10, 15, 0.4);
+  --glass-input-border: rgba(255, 255, 255, 0.1);
+}
+
+/* ===== Theme SANG - giu net sang trong, dung trang nga/kem thay vi trang gat,
+   accent lua cam-vang giu nguyen de nhan dien thuong hieu khong doi ===== */
+html.light {
+  --color-ink-950: #faf9f7;
+  --color-ink-900: #f3f1ed;
+  --color-ink-800: #ffffff;
+  --color-ink-700: #e8e5df;
+  --color-ink-600: #d7d2c8;
+  --color-mist-100: #2a2620;
+  --color-mist-300: #4d4840;
+  --color-mist-400: #6b6358;
+  --color-mist-500: #8c8474;
+  --glass-bg: rgba(255, 255, 255, 0.6);
+  --glass-border: rgba(0, 0, 0, 0.08);
+  --glass-input-bg: rgba(255, 255, 255, 0.7);
+  --glass-input-border: rgba(0, 0, 0, 0.1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-ink-950);
+  color: var(--color-mist-100);
+  font-family: var(--font-body);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ===== Scrollbar tuy chinh, hop voi theme hien tai ===== */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-ink-900);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-ink-600);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #ff5722;
+}
+
+/* ===== Glassmorphism dung cho form lien he, card noi bat ===== */
+.glass-panel {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.glass-input {
+  background: var(--glass-input-bg);
+  border: 1px solid var(--glass-input-border);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.3s ease;
+}
+.glass-input:focus {
+  border-color: #ff5722;
+  box-shadow: 0 0 0 3px rgba(255, 87, 34, 0.15);
+  outline: none;
+}
+
+/* ===== Text glow dung cho headline noi bat ===== */
+.text-glow {
+  text-shadow: 0 0 20px rgba(255, 87, 34, 0.5), 0 0 40px rgba(255, 87, 34, 0.25);
+}
+
+.text-gold-glow {
+  text-shadow: 0 0 18px rgba(245, 185, 66, 0.5);
+}
+
+/* ===== Tom tat (focus-visible) ro net cho a11y, khong tat hoan toan outline ===== */
+:focus-visible {
+  outline: 2px solid #ff5722;
+  outline-offset: 2px;
+}
+
+/* ===== Respect reduced motion ===== */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ===== Particles canvas container ===== */
+.particles-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
